@@ -1,0 +1,40 @@
+#sidebar{
+    background-color: $light-color;
+    grid-area: sidebar;
+    padding: 20px;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .sorter{
+        cursor: pointer;
+    }
+
+    .basic-filters{
+        display: grid;
+        grid-gap: 10px;
+    }
+    #projects{
+        .projects-label{
+            font-weight: 700;
+        }
+        .projects-wrapper{
+
+        }
+        .add-project-button{
+            display: flex;
+            justify-content: center;
+            color: $offwhite;
+            background-color: rgb(73, 175, 73);
+            border-radius: 10px;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover{
+            background-color: rgb(47, 116, 47);
+            }
+        }
+    }
+}
