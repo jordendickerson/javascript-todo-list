@@ -9,6 +9,10 @@
 
     .sorter{
         cursor: pointer;
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     .basic-filters{
