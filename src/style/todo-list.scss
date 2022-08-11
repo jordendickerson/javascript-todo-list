@@ -1,4 +1,19 @@
 #todos-container{
     background-color: $offwhite;
     grid-area: todos;
+    padding: 40px;
+
+    .list-title{
+        font-size: 2.5em;
+        font-weight: 600;
+    }
+
+    .add-task-button{
+        cursor: pointer;
+        background-color: rgb(220, 224, 224);
+        display: flex;
+        justify-content: center;
+        font-size: 1.2em;
+        border-radius: 20px;
+    }
 }

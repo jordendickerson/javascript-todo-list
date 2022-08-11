@@ -1,36 +1,31 @@
 require('./style/main.scss');
+import projectSidebarHandler from './components/sidebar';
 
-const todoContainer = document.getElementById('todos-container');
+const listTitle = document.querySelector('.list-title');
+const tasksContainer = document.querySelector('.tasks-container');
+const addTaskButton = document.querySelector('.add-task-button')
 const addProjectButton = document.querySelector('.add-project-button');
 
-function projectSidebarHandler(){
-    const projectsSidebar = document.querySelector('.projects-wrapper');
-    const projectsList = [];
 
-    const addItem = (itemName) => {
-        let item = itemName;
-        projectsList.push(item);
-        projectsSidebar.innerHTML = '';
+function app(){
+    //set parameters
+    let filter = 'all';
+    let tasks = [];
 
-        updateProjects();
-    }
+    //Sidebar
+    const projectSidebar = projectSidebarHandler();
+    let projectNum = 1;
+    addProjectButton.addEventListener("click", () => {
+        projectSidebar.addItem("Project "+projectNum);
+        projectNum++;
+    })
 
-
-    const updateProjects = () => projectsList.map((item) => {
-        const projectsSidebarItem = document.createElement('li');
-        projectsSidebarItem.textContent = item;
-        projectsSidebarItem.classList.add('project-sidebar-item');
-
-        projectsSidebar.appendChild(projectsSidebarItem);
-    });
-
-    return {addItem, updateProjects};
+    //Add Task Button
+    addTaskButton.addEventListener("click", () => {
+        const temporaryTask = document.createElement('div');
+        temporaryTask.textContent = "Temporary Task";
+        tasksContainer.appendChild(temporaryTask);
+    })
 }
 
-const projectSidebar = projectSidebarHandler();
-projectSidebar.updateProjects();
-let projectNum = 1;
-addProjectButton.addEventListener("click", () => {
-    projectSidebar.addItem("Project "+projectNum);
-    projectNum++;
-})
+app();

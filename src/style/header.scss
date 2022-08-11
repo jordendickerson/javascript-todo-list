@@ -1,6 +1,7 @@
 #header{
     background-color: $primary-color;
     grid-area: header;
+    height: 20vh;
 
     .title-date-wrapper{
         display: flex;
